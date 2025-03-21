@@ -1,0 +1,36 @@
+# DAPO Training Configuration
+
+# Model parameters
+model:
+  name: "gpt2"  # Base model to use
+  tokenizer: "gpt2"
+
+# DAPO algorithm parameters
+learning:
+  group_size: 4          # G: number of outputs to sample per prompt
+  eps_low: 0.2           # Lower clipping threshold
+  eps_high: 0.3          # Upper clipping threshold
+  max_length: 50         # Maximum generation length
+  length_cache: 10       # Buffer for length penalty before max_length
+  learning_rate: 1.0e-5  # Learning rate for policy optimization
+  num_epochs: 10         # Number of training epochs
+  batch_size: 16         # Batch size for training
+  max_grad_norm: 1.0     # Gradient clipping norm
+
+# Data parameters
+data:
+  train_file: "data/train.jsonl"
+  eval_file: "data/eval.jsonl"
+
+# System parameters
+system:
+  seed: 42
+  device: "cuda"
+  checkpoint_dir: "models/checkpoints"
+  log_dir: "logs"
+
+# Logging
+logging:
+  log_interval: 10      # Log every N steps
+  eval_interval: 100    # Evaluate every N steps
+  save_interval: 500    # Save model every N steps
