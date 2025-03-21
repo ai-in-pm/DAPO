@@ -2,8 +2,6 @@
 
 This repository contains an implementation of the Decoupled Clip and Dynamic Sampling Policy Optimization (DAPO) algorithm for reinforcement learning with language models. DAPO is designed to fine-tune language models for complex reasoning tasks.
 
-![DAPO Banner](https://raw.githubusercontent.com/ai-in-pm/DAPO/main/assets/dapo_banner.png)
-
 ## Features
 
 - **Group Relative Policy Optimization (GRPO)** - Samples G responses per prompt using the current policy and normalizes each response's reward relative to the group's mean and standard deviation.
